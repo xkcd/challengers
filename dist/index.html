@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title>maaaaps</title>
+</head>
+<body>
+  <div id="comic">
+    <img src="challengers_header.png" srcset="challengers_header_2x.png 2x">
+    <img id="comic-content" src="challengers_map_placeholder.png" title="Loading..." srcset="challengers_map_placeholder_2x.png 2x">
+    <img src="challengers_footer.png" srcset="challengers_footer_2x.png 2x">
+    <style>
+      @font-face {
+        font-family: 'xkcd-Regular-v2';
+        src: url('xkcd-Regular-v2.woff') format('woff');
+      }
+
+      #comic img, #comic canvas {
+        display: block;
+      }
+    </style>
+    <script src="dev.js"></script>
+  </div>
+</body>
+</html>

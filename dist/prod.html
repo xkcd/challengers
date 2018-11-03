@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title>maaaaps</title>
+</head>
+<body>
+  <div id="comic">
+    <img src="/2067/asset/challengers_header.png" srcset="/2067/asset/challengers_header_2x.png 2x">
+    <img id="comic-content" src="/2067/asset/challengers_map_placeholder.png" title="Loading..." srcset="/2067/asset/challengers_map_placeholder_2x.png 2x">
+    <img src="/2067/asset/challengers_footer.png" srcset="/2067/asset/challengers_footer_2x.png 2x">
+    <style>
+      @font-face {
+        font-family: 'xkcd-Regular-v2';
+        src: url('/2067/asset/xkcd-Regular-v2.woff') format('woff');
+      }
+
+      #comic {
+        margin: 0 30px;
+      }
+
+      #comic img, #comic canvas {
+        display: block;
+      }
+
+      #middleContainer {
+          width: 1020px;
+          margin-left: -510px;
+      }
+    </style>
+    <script src="comic.js"></script>
+  </div>
+</body>
+</html>
