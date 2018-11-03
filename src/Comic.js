@@ -219,35 +219,29 @@ export default class Comic {
 
     for (const idx of idxsInFrame) {
       const obj = objIndex[idx]
-      if (obj.properties.kind !== 'comic') {
-        continue
-      }
-
-      const {id} = obj
       const {pos} = obj.properties
-      const {x, y, w, th} = pos
-      this.drawImage(id, x, y, w, th)
-    }
 
-    for (const idx of idxsInFrame) {
-      const obj = objIndex[idx]
-      if (obj.properties.kind !== 'label') {
-        continue
+      if (obj.properties.kind === 'comic') {
+        const {id} = obj
+        const {x, y, w, th} = pos
+        this.drawImage(id, x, y, w, th)
       }
 
-      const {color, name, caption, pos} = obj.properties
-      const {x, y, w, h, cw, ch, aw} = pos
+      if (obj.properties.kind === 'label') {
+        const {color, name, caption} = obj.properties
+        const {x, y, w, h, cw, ch, aw} = pos
 
-      ctx.fillStyle = color
+        ctx.fillStyle = color
 
-      ctx.textBaseline = 'top'
-      if (!this.drawText(name, x, y, w, h)) {
-        // Text is tiny; no need to worry about smaller bits.
-        continue
-      }
+        ctx.textBaseline = 'top'
+        if (!this.drawText(name, x, y, w, h)) {
+          // Text is tiny; no need to worry about smaller bits.
+          continue
+        }
 
-      if (caption) {
-        this.drawText(caption, x, y + h, cw, ch)
+        if (caption) {
+          this.drawText(caption, x, y + h, cw, ch)
+        }
       }
     }
 
